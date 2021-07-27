@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RabbitMQLearning.Producer\RabbitMQLearning.Producer.csproj" />
+    <ProjectReference Include="..\RabbitQMLerning.Consumer\RabbitQMLerning.Consumer.csproj" />
+  </ItemGroup>
+
 </Project>
