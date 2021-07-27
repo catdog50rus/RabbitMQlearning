@@ -1,17 +1,13 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 
-namespace RabbitQMLerning.Consumer
+namespace RabbitMQLearning.ConsumerAll
 {
     class Program
     {
-        public static void Main()
+        static void Main(string[] args)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
 
@@ -21,6 +17,12 @@ namespace RabbitQMLerning.Consumer
 
             var queueName = channel.QueueDeclare();
 
+            channel.QueueBind(queue: queueName,
+                              exchange: "dev-direct",
+                              routingKey: "warning");
+            channel.QueueBind(queue: queueName,
+                              exchange: "dev-direct",
+                              routingKey: "info");
             channel.QueueBind(queue: queueName,
                               exchange: "dev-direct",
                               routingKey: "error");

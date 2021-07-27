@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RabbitMQLearning.Producer\RabbitMQLearning.Producer.csproj" />
-    <ProjectReference Include="..\RabbitQMLerning.Consumer\RabbitQMLerning.Consumer.csproj" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
   </ItemGroup>
 
 </Project>
